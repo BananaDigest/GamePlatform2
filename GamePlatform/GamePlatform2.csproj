@@ -62,7 +62,7 @@
     <Compile Include="Games\StrategyGame.cs" />
     <Compile Include="User\User.cs" />
     <Compile Include="User\DataConnectedToUser\UserDatabase.cs" />
-    <Compile Include="User\DataConnectedToUser\UserManager.cs" />
+    <Compile Include="User\Singleton\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

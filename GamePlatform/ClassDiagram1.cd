@@ -101,8 +101,8 @@
   <Class Name="GamePlatform2.UserManager">
     <Position X="5.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAgAAAAAAAAAAAAAAAAAAEAAAAIQAAAAAAA=</HashCode>
-      <FileName>User\DataConnectedToUser\UserManager.cs</FileName>
+      <HashCode>IAAAAAAAAAgAAAAAAAAAAAAAAABAAEAAQAIQAAAAAAA=</HashCode>
+      <FileName>User\Singleton\UserManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="GamePlatform2.Platform">

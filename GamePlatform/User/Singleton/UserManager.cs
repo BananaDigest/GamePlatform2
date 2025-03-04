@@ -7,8 +7,16 @@ namespace GamePlatform2
 {
     public class UserManager
     {
+        private static readonly Lazy<UserManager> instance = new Lazy<UserManager>(() => new UserManager());
+        public static UserManager Instance => instance.Value;
+
         private Dictionary<string, User> users = new Dictionary<string, User>();
         private readonly string filePath = "usersData.json";
+
+        private UserManager()
+        {
+            LoadUsers();
+        }
 
         public void LoadUsers()
         {
@@ -51,4 +59,5 @@ namespace GamePlatform2
             return users[username];
         }
     }
+
 }
