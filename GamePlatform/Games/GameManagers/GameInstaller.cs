@@ -6,10 +6,7 @@ namespace GamePlatform2
     {
         public void InstallGame(PC pc)
         {
-            Console.WriteLine("Оберiть гру для встановлення:");
-            Console.WriteLine("1) Strategy Game");
-            Console.WriteLine("2) RPG Game");
-            Console.WriteLine("3) Adventures Game");
+            MenuDisplayer.ShowInstallerMenu();
 
             string[] gameNames = { "Strategy Game", "RPG Game", "Adventures Game" };
             int choice;
@@ -19,16 +16,16 @@ namespace GamePlatform2
                 {
                     pc.InstalledGames.Add(gameNames[choice - 1]);
                     pc.Storage -= 50;
-                    Console.WriteLine($"{gameNames[choice - 1]} встановлено!");
+                    MenuDisplayer.ShowSuccess($"{gameNames[choice - 1]} встановлено!");
                 }
                 else
                 {
-                    Console.WriteLine("Недостатньо мiсця.");
+                    MenuDisplayer.ShowError("Недостатньо мiсця.");
                 }
             }
             else
             {
-                Console.WriteLine("Некоректний вибiр.");
+                MenuDisplayer.ShowError("Некоректний вибiр.");
             }
         }
     }

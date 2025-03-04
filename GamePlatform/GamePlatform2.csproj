@@ -52,6 +52,7 @@
     <Compile Include="Games\GameManagers\GameInstaller.cs" />
     <Compile Include="Games\GameManagers\GameLauncher.cs" />
     <Compile Include="Menu\GameSimulation.cs" />
+    <Compile Include="Menu\MenuDisplayer.cs" />
     <Compile Include="PCs\Observer\PCChosenEventArgs.cs" />
     <Compile Include="PCs\Observer\PCLogger.cs" />
     <Compile Include="Streamer\MobileStream.cs" />

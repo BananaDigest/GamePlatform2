@@ -17,19 +17,16 @@ namespace GamePlatform2
         {
             if (pc.Platform != Platform.Mobile)
             {
-                Console.WriteLine("Трансляцiя доступна тiльки з мобiльного пристрою!");
+                MenuDisplayer.ShowMessage("Трансляцiя доступна тiльки з мобiльного пристрою!");
                 return;
             }
 
-            Console.WriteLine("Оберiть пристрiй для трансляцiї:");
-            Console.WriteLine("1) Smart TV");
-            Console.WriteLine("2) Комп’ютер");
-            Console.WriteLine("3) Планшет");
+            MenuDisplayer.ShowMobileStreamMenu();
 
             int choice;
             do
             {
-                Console.Write("Введіть номер: ");
+                MenuDisplayer.ShowMessage("Введіть номер: ");
             } while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 3);
 
             string device = choice == 1 ? "Smart TV" : choice == 2 ? "Комп’ютер" : "Планшет";
@@ -39,12 +36,12 @@ namespace GamePlatform2
 
             while (!Console.KeyAvailable)
             {
-                Console.WriteLine($"Гра транслюється на {device}...");
-                Console.WriteLine("Натиснiть будь-яку кнопку, щоб зупинити трансляцiю");
+                MenuDisplayer.ShowMessage($"Гра транслюється на {device}...");
+                MenuDisplayer.ShowMessage("Натиснiть будь-яку кнопку, щоб зупинити трансляцiю");
                 Thread.Sleep(2000);
             }
             Console.ReadKey(true);
-            Console.WriteLine("Трансляцiю зупинено.");
+            MenuDisplayer.ShowSuccess("Трансляцiю зупинено.");
 
         }
     }

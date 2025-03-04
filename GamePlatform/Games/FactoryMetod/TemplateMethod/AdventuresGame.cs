@@ -16,16 +16,16 @@ namespace GamePlatform2
 
         public override void Install(PC pc)
         {
-            Console.WriteLine("Installing Adventures Game...");
+            MenuDisplayer.ShowMessage("Installing Adventures Game...");
         }
 
         public override void Launch(User user, PC pc)
         {
-            Console.WriteLine("Launching Adventures Game...");
+            MenuDisplayer.ShowMessage("Launching Adventures Game...");
             if (pc.Platform == Platform.Mobile)
             {
                 int stream;
-                Console.WriteLine("Бажаєте транслювати гру на iнший пристрiй?\n1) Так\n2) Нi");
+                MenuDisplayer.ShowMessage("Бажаєте транслювати гру на iнший пристрiй?\n1) Так\n2) Нi");
                 int.TryParse(Console.ReadLine(), out stream);
                 if (stream == 1)
                 {
@@ -68,19 +68,14 @@ namespace GamePlatform2
             bool playing = true;
             while (playing)
             {
-                Console.WriteLine($"Ви на {level} рiвнi.");
-                Console.WriteLine("Оберiть дiю:");
-                Console.WriteLine("1) Бiгти по свiту");
-                Console.WriteLine("2) Розв'язати головоломку");
-                Console.WriteLine("3) Шукати скринi");
-                Console.WriteLine("4) Вийти з гри");
+                MenuDisplayer.ShowAdventuresGameMenu(level);
 
                 if (!int.TryParse(Console.ReadLine(), out int choice)) continue;
 
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Ви бiгаєте по свiту i дослiджуєте околицi!");
+                        MenuDisplayer.ShowSuccess("Ви бiгаєте по свiту i дослiджуєте околицi!");
                         break;
                     case 2:
                         SolvePuzzle();
@@ -90,10 +85,10 @@ namespace GamePlatform2
                         break;
                     case 4:
                         playing = false;
-                        Console.WriteLine($"Гра завершена. Ваш рiвень: {level}");
+                        MenuDisplayer.ShowMessage($"Гра завершена. Ваш рiвень: {level}");
                         break;
                     default:
-                        Console.WriteLine("Некоректний вибiр!");
+                        MenuDisplayer.ShowError("Некоректний вибiр!");
                         break;
                 }
             }
@@ -101,27 +96,27 @@ namespace GamePlatform2
 
         private void SolvePuzzle()
         {
-            Console.WriteLine("Головоломка: Скiльки буде 2 + 2?");
+            MenuDisplayer.ShowMessage("Головоломка: Скiльки буде 2 + 2?");
             if (int.TryParse(Console.ReadLine(), out int answer) && answer == 4)
             {
-                Console.WriteLine("Правильно! Ви отримали рiвень!");
+                MenuDisplayer.ShowSuccess("Правильно! Ви отримали рiвень!");
                 LevelUp();
             }
             else
             {
-                Console.WriteLine("Неправильна відповідь!");
+                MenuDisplayer.ShowError("Неправильна вiдповiдь!");
             }
 
-            Console.WriteLine("Головоломка: Яке слово читається однаково злiва направо i справа налiво? (приклад: око)");
+            MenuDisplayer.ShowMessage("Головоломка: Яке слово читається однаково злiва направо i справа налiво? (приклад: око)");
             string response = Console.ReadLine()?.Trim().ToLower();
             if (response == "око" || response == "радар")
             {
-                Console.WriteLine("Правильно! Ви отримали рiвень!");
+                MenuDisplayer.ShowSuccess("Правильно! Ви отримали рiвень!");
                 LevelUp();
             }
             else
             {
-                Console.WriteLine("Неправильна вiдповiдь!");
+                MenuDisplayer.ShowMessage("Неправильна вiдповiдь!");
             }
         }
 
@@ -130,7 +125,7 @@ namespace GamePlatform2
             int foundChests = random.Next(0, 3);
             if (foundChests > 0)
             {
-                Console.WriteLine($"Ви знайшли {foundChests} скринi! Ваш рiвень пiдвищено.");
+                MenuDisplayer.ShowSuccess($"Ви знайшли {foundChests} скринi! Ваш рiвень пiдвищено.");
                 for (int i = 0; i < foundChests; i++)
                 {
                     LevelUp();
@@ -138,14 +133,14 @@ namespace GamePlatform2
             }
             else
             {
-                Console.WriteLine("Ви не знайшли жодної скринi цього разу.");
+                MenuDisplayer.ShowMessage("Ви не знайшли жодної скринi цього разу.");
             }
         }
 
         private void LevelUp()
         {
             level++;
-            Console.WriteLine($"Ваш рiвень тепер: {level}");
+            MenuDisplayer.ShowMessage($"Ваш рiвень тепер: {level}");
         }
     }
 

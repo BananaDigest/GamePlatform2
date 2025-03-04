@@ -23,13 +23,13 @@ namespace GamePlatform2
         public void Login()
         {
             IsLoggedIn = true;
-            Console.WriteLine($"{Username} logged in.");
+            MenuDisplayer.ShowMessage($"{Username} logged in.");
         }
 
         public void Logout()
         {
             IsLoggedIn = false;
-            Console.WriteLine($"{Username} logged out.");
+            MenuDisplayer.ShowMessage($"{Username} logged out.");
         }
 
         public string LoadGame(string gameName)
@@ -49,11 +49,11 @@ namespace GamePlatform2
             {
                 string json = JsonConvert.SerializeObject(GameProgress, Formatting.Indented);
                 File.WriteAllText(SaveFile, json);
-                Console.WriteLine($"{gameName} - {stat} saved: {value}");
+                MenuDisplayer.ShowMessage($"{gameName} - {stat} saved: {value}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Помилка збереження прогресу: {ex.Message}");
+                MenuDisplayer.ShowMessage($"Помилка збереження прогресу: {ex.Message}");
             }
         }
 
@@ -67,7 +67,7 @@ namespace GamePlatform2
                 return value;
             }
 
-            Console.WriteLine($"[Warning] Данi для {gameName} не знайдено або пошкодженi. Використовується значення за замовчуванням.");
+            MenuDisplayer.ShowMessage($"[Warning] Данi для {gameName} не знайдено або пошкодженi. Використовується значення за замовчуванням.");
             return 1; 
         }
 

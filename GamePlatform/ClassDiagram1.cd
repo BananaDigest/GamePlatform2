@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="observer">
-    <Position X="9.396" Y="5.34" Height="0.291" Width="1.175" />
+    <Position X="9.367" Y="5.704" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="observer">
-    <Position X="9.877" Y="8.736" Height="0.291" Width="1.175" />
+    <Position X="9.338" Y="8.736" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="observer">
     <Position X="7.633" Y="7.73" Height="0.291" Width="1.175" />
@@ -78,7 +78,7 @@
   <Class Name="GamePlatform2.GameSimulation">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAQAAAAAAAAAAAAAACIAAAAEAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AIAAAAAAAAAAAAAABACIAAAAEAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Menu\GameSimulation.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -125,7 +125,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GamePlatform2.PCManager">
-    <Position X="9.25" Y="5.75" Width="1.5" />
+    <Position X="9.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAgAAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PCs\Observer\PCManager\PCManager.cs</FileName>
@@ -146,14 +146,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GamePlatform2.PCLogger">
-    <Position X="9.75" Y="9.25" Width="1.5" />
+    <Position X="9.25" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PCs\Observer\PCLogger.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="GamePlatform2.MenuDisplayer">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgEBAAkAAgAAASAAAAAAAAAQACACAAABAAAAgA=</HashCode>
+      <FileName>Menu\MenuDisplayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="GamePlatform2.Platform">
-    <Position X="9.25" Y="3.5" Width="1.5" />
+    <Position X="9.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAABAAAAAAAAAAAAAAAAAAACAABAAAAAAAAA=</HashCode>
       <FileName>PCs\Platform.cs</FileName>

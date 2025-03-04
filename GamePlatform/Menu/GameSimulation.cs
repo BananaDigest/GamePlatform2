@@ -5,19 +5,14 @@ namespace GamePlatform2
     public class GameSimulation
     {
         private readonly PCManager pcManager = new PCManager();
-        private readonly UserManager userManager = new UserManager();
+        private readonly PCLogger pcLogger = new PCLogger();
+        private readonly UserManager userManager = UserManager.Instance;
         private readonly GameInstaller gameInstaller = new GameInstaller();
         private readonly GameLauncher gameLauncher = new GameLauncher();
-        private string selectedDevice;
 
         public void Run()
         {
-            userManager.LoadUsers();
-            pcManager.ChosenPC += platform =>
-            {
-                selectedDevice = platform;
-                Console.WriteLine($"Було обрано {platform}");
-            };
+            pcLogger.Subscribe(pcManager);
 
             while (true)
             {
@@ -32,11 +27,7 @@ namespace GamePlatform2
                 bool exitPCMenu = false;
                 while (!exitPCMenu)
                 {
-                    Console.WriteLine("1) Встановити гру");
-                    Console.WriteLine("2) Запустити гру");
-                    Console.WriteLine("3) Вийти з акаунту");
-                    Console.WriteLine("4) Вийти з ПК");
-                    Console.WriteLine("5) Завершити програму");
+                    MenuDisplayer.ShowGameSimulationMenu();
 
                     string choice = Console.ReadLine();
                     switch (choice)
@@ -62,7 +53,7 @@ namespace GamePlatform2
                             userManager.SaveUsers();
                             return;
                         default:
-                            Console.WriteLine("Некоректний вибiр.");
+                            MenuDisplayer.ShowError("Некоректний вибiр.");
                             break;
                     }
                 }

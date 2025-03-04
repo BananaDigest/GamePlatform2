@@ -23,7 +23,7 @@ namespace GamePlatform2
         {
             if (currentPC.Platform != Platform.Windows)
             {
-                Console.WriteLine("Гра пiдтримується тiльки на Windows!");
+                MenuDisplayer.ShowError("Гра пiдтримується тiльки на Windows!");
                 return false;
             }
             return currentPC.RAM >= RequiredRAM && currentPC.CPU >= RequiredCPU && currentPC.GPU >= RequiredGPU;
@@ -32,24 +32,24 @@ namespace GamePlatform2
         {
             if (pc.Platform != Platform.Windows)
             {
-                Console.WriteLine("Strategy games can only be installed on Windows.");
+                MenuDisplayer.ShowError("Strategy games can only be installed on Windows.");
                 return;
             }
             else
             {
-                Console.WriteLine("Installing Strategy Game...");
+                MenuDisplayer.ShowMessage("Installing Strategy Game...");
             }
         }
         public override void Launch(User user, PC pc)
         {
             if (pc.Platform != Platform.Windows)
             {
-                Console.WriteLine("Strategy games can only be played on Windows.");
+                MenuDisplayer.ShowError("Strategy games can only be played on Windows.");
                 return;
             }
             else
             {
-                Console.WriteLine("Launching Strategy Game...");
+                MenuDisplayer.ShowSuccess("Launching Strategy Game...");
                 LoadProgress(user);
                 StartSimulation();
             }
@@ -57,16 +57,13 @@ namespace GamePlatform2
 
         public override void StartSimulation()
         {
-            Console.WriteLine("Гра розпочалася!");
+            MenuDisplayer.ShowSuccess("Гра розпочалася!");
             Thread enemyThread = new Thread(SimulateEnemyAttacks);
             enemyThread.Start();
 
             while (running)
             {
-                Console.WriteLine("Оберiть дiю:");
-                Console.WriteLine("1) Побудувати вежу (вартiсть 20 монет)");
-                Console.WriteLine("2) Напасти на ворогiв");
-                Console.WriteLine("3) Вийти з гри");
+                MenuDisplayer.ShowStrategyGameMenu();
 
                 if (!int.TryParse(Console.ReadLine(), out int choice)) continue;
 
@@ -80,10 +77,10 @@ namespace GamePlatform2
                         break;
                     case 3:
                         running = false;
-                        Console.WriteLine($"Гра завершена. Збережено {Towers} веж.");
+                        MenuDisplayer.ShowMessage($"Гра завершена. Збережено {Towers} веж.");
                         break;
                     default:
-                        Console.WriteLine("Некоректний вибір!");
+                        MenuDisplayer.ShowError("Некоректний вибiр!");
                         break;
                 }
             }
@@ -95,11 +92,11 @@ namespace GamePlatform2
             {
                 Money -= 20;
                 Towers++;
-                Console.WriteLine($"Побудовано вежу! Всього веж: {Towers}, Залишок грошей: {Money}");
+                MenuDisplayer.ShowMessage($"Побудовано вежу! Всього веж: {Towers}, Залишок грошей: {Money}");
             }
             else
             {
-                Console.WriteLine("Недостатньо грошей!");
+                MenuDisplayer.ShowError("Недостатньо грошей!");
             }
         }
 
@@ -112,7 +109,7 @@ namespace GamePlatform2
                 Towers = Math.Max(0, Towers - lostTowers);
                 int lostMoney = random.Next(10, 51);
                 Money = Math.Max(0, Money - lostMoney);
-                Console.WriteLine($"Атака провалена! Втрачено {lostTowers} веж, {lostMoney} монет.");
+                MenuDisplayer.ShowError($"Атака провалена! Втрачено {lostTowers} веж, {lostMoney} монет.");
             }
             else
             {
@@ -120,7 +117,7 @@ namespace GamePlatform2
                 int capturedTowers = random.Next(0, 11);
                 Money += earnedMoney;
                 Towers += capturedTowers;
-                Console.WriteLine($"Атака вдала! Зароблено {earnedMoney} монет. Захоплено веж {capturedTowers}");
+                MenuDisplayer.ShowSuccess($"Атака вдала! Зароблено {earnedMoney} монет. Захоплено веж {capturedTowers}");
             }
         }
 

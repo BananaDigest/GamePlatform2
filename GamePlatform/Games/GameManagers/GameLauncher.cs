@@ -12,15 +12,11 @@ namespace GamePlatform2
         {
             if (pc.InstalledGames.Count == 0)
             {
-                Console.WriteLine("Немає встановлених iгор.");
+                MenuDisplayer.ShowMessage("Немає встановлених iгор.");
                 return;
             }
 
-            Console.WriteLine("Оберiть гру для запуску:");
-            for (int i = 0; i < pc.InstalledGames.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}) {pc.InstalledGames[i]}");
-            }
+            MenuDisplayer.ShowGameList(pc.InstalledGames);
 
             int choice;
             if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= pc.InstalledGames.Count)
@@ -36,12 +32,12 @@ namespace GamePlatform2
                 }
                 else
                 {
-                    Console.WriteLine("Недостатньо ресурсiв для запуску гри.");
+                    MenuDisplayer.ShowMessage("Недостатньо ресурсiв для запуску гри.");
                 }
             }
             else
             {
-                Console.WriteLine("Некоректний вибiр.");
+                MenuDisplayer.ShowError("Некоректний вибiр.");
             }
         }
     }

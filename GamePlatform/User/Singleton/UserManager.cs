@@ -35,27 +35,27 @@ namespace GamePlatform2
 
         public User Login()
         {
-            Console.WriteLine("Введiть iм'я користувача:");
+            MenuDisplayer.ShowMessage("Введiть iм'я користувача:");
             string username = Console.ReadLine();
 
-            Console.WriteLine("Введіть пароль:");
+            MenuDisplayer.ShowMessage("Введiть пароль:");
             string password = Console.ReadLine();
 
             if (!users.ContainsKey(username))
             {
                 var newUser = new User(username, password);
                 users[username] = newUser;
-                Console.WriteLine("Новий користувач створений.");
+                MenuDisplayer.ShowSuccess("Новий користувач створений.");
                 return newUser;
             }
 
             if (users[username].Password != password)
             {
-                Console.WriteLine("Невiрний пароль!");
+                MenuDisplayer.ShowError("Невiрний пароль!");
                 return null;
             }
 
-            Console.WriteLine($"Користувач {username} увiйшов.");
+            MenuDisplayer.ShowSuccess($"Користувач {username} увiйшов.");
             return users[username];
         }
     }

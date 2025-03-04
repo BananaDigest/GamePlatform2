@@ -16,11 +16,7 @@ namespace GamePlatform2
 
         public PC SelectPC()
         {
-            Console.WriteLine("Оберіть пристрій:");
-            for (int i = 0; i < pcs.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}) {pcs[i].Name}");
-            }
+            MenuDisplayer.ShowPCList(pcs);
 
             int choice;
             if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= pcs.Count)
@@ -29,7 +25,7 @@ namespace GamePlatform2
                 OnPCChosen(selectedPC.Name);
                 return selectedPC;
             }
-            Console.WriteLine("Некоректний вибір!");
+            MenuDisplayer.ShowError("Некоректний вибiр!");
             return SelectPC();
         }
         protected virtual void OnPCChosen(string pcName)

@@ -11,7 +11,7 @@ namespace GamePlatform2
 
         private void HandlePCChosen(object sender, PCChosenEventArgs e)
         {
-            Console.WriteLine($"Було обрано ПК: {e.PCName}");
+            MenuDisplayer.ShowMessage($"Було обрано ПК: {e.PCName}");
         }
     }
 
