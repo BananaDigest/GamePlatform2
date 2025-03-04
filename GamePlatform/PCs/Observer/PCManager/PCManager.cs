@@ -5,7 +5,7 @@ namespace GamePlatform2
 {
     public class PCManager
     {
-        public event Action<string> ChosenPC;
+        public event EventHandler<PCChosenEventArgs> PCChosen;
         private List<PC> pcs = new List<PC>
         {
             new PC("Windows PC", Platform.Windows, 8, 16, 6, 500),
@@ -19,18 +19,22 @@ namespace GamePlatform2
             Console.WriteLine("Оберіть пристрій:");
             for (int i = 0; i < pcs.Count; i++)
             {
-                    Console.WriteLine($"{i + 1}) {pcs[i].Name}");
+                Console.WriteLine($"{i + 1}) {pcs[i].Name}");
             }
 
             int choice;
             if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= pcs.Count)
             {
                 PC selectedPC = pcs[choice - 1];
-                ChosenPC?.Invoke(selectedPC.Name);
+                OnPCChosen(selectedPC.Name);
                 return selectedPC;
             }
             Console.WriteLine("Некоректний вибір!");
             return SelectPC();
+        }
+        protected virtual void OnPCChosen(string pcName)
+        {
+            PCChosen?.Invoke(this, new PCChosenEventArgs(pcName));
         }
     }
 }

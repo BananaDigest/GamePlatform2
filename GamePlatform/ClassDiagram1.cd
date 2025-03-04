@@ -94,8 +94,8 @@
   <Class Name="GamePlatform2.PCManager">
     <Position X="7.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PCs\PCManager\PCManager.cs</FileName>
+      <HashCode>ACAAAAAAAAgAAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PCs\Observer\PCManager\PCManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GamePlatform2.UserManager">

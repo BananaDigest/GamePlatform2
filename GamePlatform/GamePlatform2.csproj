@@ -52,9 +52,11 @@
     <Compile Include="Games\GameManagers\GameInstaller.cs" />
     <Compile Include="Games\GameManagers\GameLauncher.cs" />
     <Compile Include="Menu\GameSimulation.cs" />
+    <Compile Include="PCs\Observer\PCChosenEventArgs.cs" />
+    <Compile Include="PCs\Observer\PCLogger.cs" />
     <Compile Include="Streamer\MobileStream.cs" />
     <Compile Include="PCs\PC.cs" />
-    <Compile Include="PCs\PCManager\PCManager.cs" />
+    <Compile Include="PCs\Observer\PCManager\PCManager.cs" />
     <Compile Include="PCs\Platform.cs" />
     <Compile Include="Menu\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
