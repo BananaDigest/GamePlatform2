@@ -1,6 +1,6 @@
 ﻿
 
-namespace GamePlatform
+namespace GamePlatform2
 {
     public abstract class Game
     {

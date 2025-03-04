@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace GamePlatform
+namespace GamePlatform2
 {
     public class User
     {

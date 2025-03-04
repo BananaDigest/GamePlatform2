@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GamePlatform
+namespace GamePlatform2
 {
     public class PCManager
     {

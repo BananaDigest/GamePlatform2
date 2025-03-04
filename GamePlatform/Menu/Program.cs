@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GamePlatform
+namespace GamePlatform2
 {
     class Program
     {

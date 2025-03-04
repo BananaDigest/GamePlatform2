@@ -1,111 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="GamePlatform.StrategyGame">
+  <Class Name="GamePlatform2.StrategyGame">
     <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>oAAQAgAAUAAAAggEAAAAAAQAAAiAAAAAAAQAAAQAAQA=</HashCode>
       <FileName>Games\StrategyGame.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.User">
+  <Class Name="GamePlatform2.User">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAgAAQBAAAIAAACAAAACBAASAAAAAAE=</HashCode>
       <FileName>User\User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.UserDatabase">
+  <Class Name="GamePlatform2.UserDatabase">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAA=</HashCode>
       <FileName>User\DataConnectedToUser\UserDatabase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.AdventuresGame">
+  <Class Name="GamePlatform2.AdventuresGame">
     <Position X="4" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAQAAAAggEAAQAQAABAAGAAgAAAAQAAAAAAAA=</HashCode>
       <FileName>Games\AdventuresGame.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.Game">
+  <Class Name="GamePlatform2.Game">
     <Position X="2.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAQAAAAgoEAAAAAAQAAACAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Games\BaseGame\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.GameFactory">
+  <Class Name="GamePlatform2.GameFactory">
     <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Games\GameManagers\GameFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.GameSimulation">
+  <Class Name="GamePlatform2.GameSimulation">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAQAAAAAAAAAAAAAACIAAAAEAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Menu\GameSimulation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.PC">
+  <Class Name="GamePlatform2.PC">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAgAAAAAAAAAAAAAAAASIAAAAAAAACAAAAAAAAgA=</HashCode>
       <FileName>PCs\PC.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.Program">
+  <Class Name="GamePlatform2.Program">
     <Position X="7.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Menu\Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.MobileStream">
+  <Class Name="GamePlatform2.MobileStream">
     <Position X="5.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Streamer\MobileStream.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.RPGGame">
+  <Class Name="GamePlatform2.RPGGame">
     <Position X="2.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>wAAAAAAAYAAAAggEAAQQAAAAAACFAAAAAAQAAAQAgQA=</HashCode>
       <FileName>Games\RPGGame.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.GameInstaller">
+  <Class Name="GamePlatform2.GameInstaller">
     <Position X="7.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Games\GameManagers\GameInstaller.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.GameLauncher">
+  <Class Name="GamePlatform2.GameLauncher">
     <Position X="7.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Games\GameManagers\GameLauncher.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.PCManager">
+  <Class Name="GamePlatform2.PCManager">
     <Position X="7.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PCs\PCManager\PCManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlatform.UserManager">
+  <Class Name="GamePlatform2.UserManager">
     <Position X="5.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAgAAAAAAAAAAAAAAAAAAEAAAAIQAAAAAAA=</HashCode>
       <FileName>User\DataConnectedToUser\UserManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="GamePlatform.Platform">
+  <Enum Name="GamePlatform2.Platform">
     <Position X="4" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAABAAAAAAAAAAAAAAAAAAACAABAAAAAAAAA=</HashCode>

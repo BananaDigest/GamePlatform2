@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace GamePlatform
+namespace GamePlatform2
 {
     public class MobileStream
     {
