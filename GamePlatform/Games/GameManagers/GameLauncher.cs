@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GamePlatform2
 {
     public class GameLauncher
     {
+        private readonly Dictionary<string, IGameFactory> gameFactories = new Dictionary<string, IGameFactory>
+        {
+            { "Strategy Game", new StrategyGameFactory() },
+            { "RPG Game", new RPGGameFactory() },
+            { "Adventures Game", new AdventuresGameFactory() }
+        };
+
         public void LaunchGame(PC pc, User user)
         {
             if (pc.InstalledGames.Count == 0)
@@ -18,21 +22,29 @@ namespace GamePlatform2
 
             MenuDisplayer.ShowGameList(pc.InstalledGames);
 
-            int choice;
-            if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= pc.InstalledGames.Count)
+            if (int.TryParse(Console.ReadLine(), out int choice) &&
+                choice >= 1 && choice <= pc.InstalledGames.Count)
             {
                 string gameName = pc.InstalledGames[choice - 1];
-                Game game = GameFactory.CreateGame(gameName);
-                game.LoadProgress(user);
 
-                if (game.CanRun(pc, user))
+                if (gameFactories.TryGetValue(gameName, out IGameFactory factory))
                 {
-                    game.Launch(user, pc);
-                    game.SaveProgress(user);
+                    Game game = factory.CreateGame();
+                    game.LoadProgress(user);
+
+                    if (game.CanRun(pc, user))
+                    {
+                        game.Launch(user, pc);
+                        game.SaveProgress(user);
+                    }
+                    else
+                    {
+                        MenuDisplayer.ShowMessage("Недостатньо ресурсiв для запуску гри.");
+                    }
                 }
                 else
                 {
-                    MenuDisplayer.ShowMessage("Недостатньо ресурсiв для запуску гри.");
+                    MenuDisplayer.ShowError("Фабрика для цiєї гри не знайдена.");
                 }
             }
             else

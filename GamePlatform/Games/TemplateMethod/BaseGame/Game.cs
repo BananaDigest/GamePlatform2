@@ -1,5 +1,4 @@
 ﻿
-
 namespace GamePlatform2
 {
     public abstract class Game
@@ -13,7 +12,7 @@ namespace GamePlatform2
         public abstract void Launch(User user, PC pc);
         public abstract void SaveProgress(User user);
         public abstract void LoadProgress(User user);
-        public abstract void StartSimulation();
+        
         protected Game(string name, Platform platform, int requiredRAM, int requiredCPU, int requiredGPU)
         {
             Name = name;
@@ -24,6 +23,23 @@ namespace GamePlatform2
         }
 
         public abstract bool CanRun(PC pc, User user);
+        public abstract void StartSimulation();
+
+        public void Run(User user, PC pc)
+        {
+            Install(pc);
+            LoadProgress(user);
+
+            if (!CanRun(pc, user))
+            {
+                MenuDisplayer.ShowError("Недостатньо ресурсів для запуску гри.");
+                return;
+            }
+
+            Launch(user, pc);
+            StartSimulation();
+            SaveProgress(user);
+        }
     }
 
 }

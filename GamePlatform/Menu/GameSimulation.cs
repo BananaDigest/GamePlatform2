@@ -1,18 +1,15 @@
 ﻿using System;
-
 namespace GamePlatform2
 {
     public class GameSimulation
     {
         private readonly PCManager pcManager = new PCManager();
-        private readonly PCLogger pcLogger = new PCLogger();
         private readonly UserManager userManager = UserManager.Instance;
         private readonly GameInstaller gameInstaller = new GameInstaller();
         private readonly GameLauncher gameLauncher = new GameLauncher();
 
         public void Run()
         {
-            pcLogger.Subscribe(pcManager);
 
             while (true)
             {

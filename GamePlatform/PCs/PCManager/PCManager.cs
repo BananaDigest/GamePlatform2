@@ -5,7 +5,6 @@ namespace GamePlatform2
 {
     public class PCManager
     {
-        public event EventHandler<PCChosenEventArgs> PCChosen;
         private List<PC> pcs = new List<PC>
         {
             new PC("Windows PC", Platform.Windows, 8, 16, 6, 500),
@@ -21,16 +20,11 @@ namespace GamePlatform2
             int choice;
             if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= pcs.Count)
             {
-                PC selectedPC = pcs[choice - 1];
-                OnPCChosen(selectedPC.Name);
-                return selectedPC;
+                return pcs[choice - 1];
             }
-            MenuDisplayer.ShowError("Некоректний вибiр!");
+
+            MenuDisplayer.ShowError("Некоректний вибір!");
             return SelectPC();
-        }
-        protected virtual void OnPCChosen(string pcName)
-        {
-            PCChosen?.Invoke(this, new PCChosenEventArgs(pcName));
         }
     }
 }

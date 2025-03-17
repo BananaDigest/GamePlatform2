@@ -46,24 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Games\FactoryMetod\TemplateMethod\AdventuresGame.cs" />
-    <Compile Include="Games\FactoryMetod\TemplateMethod\BaseGame\Game.cs" />
+    <Compile Include="Games\FactoryMetod\AdventuresGameFactory.cs" />
+    <Compile Include="Games\FactoryMetod\RPGGameFactory.cs" />
+    <Compile Include="Games\FactoryMetod\StrategyGameFactory.cs" />
+    <Compile Include="Games\TemplateMethod\AdventuresGame.cs" />
+    <Compile Include="Games\TemplateMethod\BaseGame\Game.cs" />
     <Compile Include="Games\FactoryMetod\GameFactory.cs" />
     <Compile Include="Games\GameManagers\GameInstaller.cs" />
     <Compile Include="Games\GameManagers\GameLauncher.cs" />
     <Compile Include="Menu\GameSimulation.cs" />
     <Compile Include="Menu\MenuDisplayer.cs" />
-    <Compile Include="PCs\Observer\PCChosenEventArgs.cs" />
-    <Compile Include="PCs\Observer\PCLogger.cs" />
+    <Compile Include="User\Observer\GameProgressNotifier.cs" />
+    <Compile Include="User\Observer\IGameProgressObserver.cs" />
     <Compile Include="Streamer\MobileStream.cs" />
     <Compile Include="PCs\PC.cs" />
-    <Compile Include="PCs\Observer\PCManager\PCManager.cs" />
+    <Compile Include="PCs\PCManager\PCManager.cs" />
     <Compile Include="PCs\Platform.cs" />
     <Compile Include="Menu\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Games\FactoryMetod\TemplateMethod\RPGGame.cs" />
-    <Compile Include="Games\FactoryMetod\TemplateMethod\StrategyGame.cs" />
-    <Compile Include="User\User.cs" />
+    <Compile Include="Games\TemplateMethod\RPGGame.cs" />
+    <Compile Include="Games\TemplateMethod\StrategyGame.cs" />
+    <Compile Include="User\Observer\User.cs" />
     <Compile Include="User\DataConnectedToUser\UserDatabase.cs" />
     <Compile Include="User\Singleton\UserManager.cs" />
   </ItemGroup>
