@@ -30,7 +30,7 @@ namespace GamePlatform2
                 {
                     mobileStream = new MobileStream(pc, user);
                     mobileStream.StreamingStarted += (device) =>
-                Console.WriteLine($"[LOG] Трансляцiя гри почалася на {device}");//підписка
+                MenuDisplayer.ShowMessage($"[LOG] Трансляцiя гри почалася на {device}");//підписка
 
                     mobileStream.StreamToDevice();
                 }
@@ -122,7 +122,8 @@ namespace GamePlatform2
             int foundChests = random.Next(0, 3);
             if (foundChests > 0)
             {
-                MenuDisplayer.ShowSuccess($"Ви знайшли {foundChests} скринi! Ваш рiвень пiдвищено.");
+                MenuDisplayer.ShowSuccess($"Ви знайшли скринi!");
+                NotifyProgress("Знайдено скринь: ", foundChests);
                 for (int i = 0; i < foundChests; i++)
                 {
                     LevelUp();
@@ -137,7 +138,7 @@ namespace GamePlatform2
         private void LevelUp()
         {
             level++;
-            MenuDisplayer.ShowMessage($"Ваш рiвень тепер: {level}");
+            NotifyProgress("Рiвень пiдвищено до ", level);
         }
     }
 

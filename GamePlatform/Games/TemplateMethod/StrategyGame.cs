@@ -91,7 +91,9 @@ namespace GamePlatform2
             {
                 Money -= 20;
                 Towers++;
-                MenuDisplayer.ShowMessage($"Побудовано вежу! Всього веж: {Towers}, Залишок грошей: {Money}");
+                MenuDisplayer.ShowSuccess($"Побудовано вежу!");
+                NotifyProgress("Всього веж: ", Towers);
+                NotifyProgress("Залишок грошей: ", Money);
             }
             else
             {
@@ -108,7 +110,9 @@ namespace GamePlatform2
                 Towers = Math.Max(0, Towers - lostTowers);
                 int lostMoney = random.Next(10, 51);
                 Money = Math.Max(0, Money - lostMoney);
-                MenuDisplayer.ShowError($"Атака провалена! Втрачено {lostTowers} веж, {lostMoney} монет.");
+                MenuDisplayer.ShowError($"Атака провалена!");
+                NotifyProgress("Втрачено веж: ", lostTowers);
+                NotifyProgress("Втрачено монет: ", lostMoney);
             }
             else
             {
@@ -116,7 +120,9 @@ namespace GamePlatform2
                 int capturedTowers = random.Next(0, 11);
                 Money += earnedMoney;
                 Towers += capturedTowers;
-                MenuDisplayer.ShowSuccess($"Атака вдала! Зароблено {earnedMoney} монет. Захоплено веж {capturedTowers}");
+                MenuDisplayer.ShowSuccess($"Атака вдала!");
+                NotifyProgress("Захоплено веж: ", capturedTowers);
+                NotifyProgress("Зароблено монет: ", earnedMoney);
             }
         }
 
@@ -131,7 +137,9 @@ namespace GamePlatform2
                 Towers = Math.Max(0, Towers - lostTowers);
                 int lostMoney = random.Next(10, 51);
                 Money = Math.Max(0, Money - lostMoney);
-                MenuDisplayer.ShowError($"Ворог напав! Втрачено {lostTowers} веж, {lostMoney} монет.");
+                MenuDisplayer.ShowError($"Ворог напав!");
+                NotifyProgress("Втрачено веж: ", lostTowers);
+                NotifyProgress("Втрачено монет: ", lostMoney);
             }
         }
         public override void SaveProgress(User user)

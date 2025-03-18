@@ -5,7 +5,7 @@ using System.IO;
 
 namespace GamePlatform2
 {
-    public class User: IGameProgressObserver
+    public class User
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -30,11 +30,6 @@ namespace GamePlatform2
         {
             IsLoggedIn = false;
             MenuDisplayer.ShowMessage($"{Username} logged out.");
-        }
-
-        public void OnProgressChanged(string game, string stat, int value)
-        {
-            MenuDisplayer.ShowMessage($"User {Username} received progress update: {game} - {stat}: {value}");
         }
 
         public string LoadGame(string gameName)

@@ -57,7 +57,7 @@
     <Compile Include="Menu\GameSimulation.cs" />
     <Compile Include="Menu\MenuDisplayer.cs" />
     <Compile Include="User\Observer\GameProgressNotifier.cs" />
-    <Compile Include="User\Observer\IGameProgressObserver.cs" />
+    <Compile Include="User\Observer\Interface\IGameProgressObserver.cs" />
     <Compile Include="Streamer\MobileStream.cs" />
     <Compile Include="PCs\PC.cs" />
     <Compile Include="PCs\PCManager\PCManager.cs" />
@@ -66,9 +66,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Games\TemplateMethod\RPGGame.cs" />
     <Compile Include="Games\TemplateMethod\StrategyGame.cs" />
-    <Compile Include="User\Observer\User.cs" />
     <Compile Include="User\DataConnectedToUser\UserDatabase.cs" />
+    <Compile Include="User\Observer\UserProgressNotifier.cs" />
     <Compile Include="User\Singleton\UserManager.cs" />
+    <Compile Include="User\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

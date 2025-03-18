@@ -147,6 +147,7 @@ namespace GamePlatform2
                             case 1:
                                 MenuDisplayer.ShowSuccess($"Ви перемогли монстра!");
                                 CurrentLevel++;
+                                NotifyProgress("Рівень підвищено до ", CurrentLevel);
                                 break;
                             case 2:
                                 MenuDisplayer.ShowSuccess("Ви знайшли скарби!");
@@ -178,6 +179,7 @@ namespace GamePlatform2
                                 string attacker = SelectAttacker(isMultiplayer);
                                 MenuDisplayer.ShowSuccess($"{attacker} перемiг монстра!");
                                 CurrentLevel++;
+                                NotifyProgress("Рiвень пiдвищено до ", CurrentLevel);
                                 break;
                             case 2:
                                 MenuDisplayer.ShowSuccess("Ви знайшли скарби!");

@@ -3,6 +3,7 @@ namespace GamePlatform2
 {
     public abstract class Game
     {
+        protected GameProgressNotifier progressNotifier = new GameProgressNotifier();
         public string Name { get; }
         public Platform Platform { get; }
         public int RequiredRAM { get; }
@@ -36,6 +37,21 @@ namespace GamePlatform2
             }
             StartSimulation();
             SaveProgress(user);
+        }
+
+        public void AttachProgressObserver(IGameProgressObserver observer)
+        {
+            progressNotifier.Subscribe(observer);
+        }
+
+        public void DetachProgressObserver(IGameProgressObserver observer)
+        {
+            progressNotifier.Unsubscribe(observer);
+        }
+
+        public void NotifyProgress(string stat, int value)
+        {
+            progressNotifier.Notify(Name, stat, value);
         }
     }
 
