@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="observer">
-    <Position X="7.633" Y="3.333" Height="0.291" Width="1.175" />
+    <Position X="7.65" Y="2.311" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="observer">
     <Position X="9.338" Y="3.785" Height="0.291" Width="1.175" />
@@ -28,7 +28,7 @@
     <Position X="0.636" Y="11.642" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="Template method">
-    <Position X="2.4" Y="11.78" Height="0.291" Width="1.175" />
+    <Position X="2.383" Y="12.015" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="Template method">
     <Position X="4.179" Y="11.584" Height="0.291" Width="1.175" />
@@ -44,12 +44,11 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GamePlatform2.User">
-    <Position X="7.5" Y="4" Width="1.5" />
+    <Position X="7.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAgAAQBAAAIAAACgAAACBAASAAAAAAE=</HashCode>
-      <FileName>User\Observer\User.cs</FileName>
+      <HashCode>AAAAAAAACAAAAAgAAQBAAAIAAACAAAACBAASAAAAAAE=</HashCode>
+      <FileName>User\User.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GamePlatform2.UserDatabase">
     <Position X="0.5" Y="1" Width="1.5" />
@@ -68,7 +67,7 @@
   <Class Name="GamePlatform2.Game">
     <Position X="2.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAQAAAAgoEAAAAAAQAAACAAAAACAAAAAAAAAI=</HashCode>
+      <HashCode>AAACAECAQAAAAgoEAAAAAAQAAACAAAAACgAAAAACAAI=</HashCode>
       <FileName>Games\TemplateMethod\BaseGame\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,7 +100,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GamePlatform2.RPGGame">
-    <Position X="2.25" Y="6.25" Width="1.5" />
+    <Position X="2.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>wAAAAAAAYAAAAggEAAQQAAAAAACFAAAAAAQAAAQAgQI=</HashCode>
       <FileName>Games\TemplateMethod\RPGGame.cs</FileName>
@@ -173,11 +172,19 @@
       <FileName>User\Observer\GameProgressNotifier.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="GamePlatform2.UserProgressNotifier">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User\Observer\UserProgressNotifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="GamePlatform2.IGameProgressObserver">
     <Position X="9.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>User\Observer\IGameProgressObserver.cs</FileName>
+      <FileName>User\Observer\Interface\IGameProgressObserver.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GamePlatform2.IGameFactory">
@@ -188,7 +195,7 @@
     </TypeIdentifier>
   </Interface>
   <Enum Name="GamePlatform2.Platform">
-    <Position X="7.5" Y="1" Width="1.5" />
+    <Position X="7.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAABAAAAAAAAAAAAAAAAAAACAABAAAAAAAAA=</HashCode>
       <FileName>PCs\Platform.cs</FileName>
