@@ -39,9 +39,8 @@ namespace GamePlatform2
 
             if (pc.Platform == Platform.Mobile)
             {
-                int stream;
                 MenuDisplayer.ShowMessage("Бажаєте транслювати гру на iнший пристрiй?\n1) Так\n2) Нi");
-                int.TryParse(Console.ReadLine(), out stream);
+                int.TryParse(Console.ReadLine(), out int stream);
                 if (stream == 1)
                 {
                     mobileStream = new MobileStream(pc, user);
@@ -51,21 +50,23 @@ namespace GamePlatform2
                 }
                 else
                 {
-                    LoadProgress(user);
-                    ConnectController();
-                    SelectMode();
-                    SelectCharacters();
-                    StartSimulation();
+                    Run(user, pc);
                 }
             }
             else
             {
-                LoadProgress(user);
-                ConnectController();
-                SelectMode();
-                SelectCharacters();
-                StartSimulation();
+                Run(user, pc);
             }
+        }
+
+        public override void Run(User user, PC pc)
+        {
+            LoadProgress(user);
+            ConnectController();
+            SelectMode();
+            SelectCharacters();
+            StartSimulation();
+            SaveProgress(user);
         }
         public void ConnectController()
         {
@@ -213,6 +214,7 @@ namespace GamePlatform2
 
         public override void SaveProgress(User user)
         {
+            Console.WriteLine("Saving RPG");
             user.SaveProgress("RPG Game", "Level", CurrentLevel);
         }
 

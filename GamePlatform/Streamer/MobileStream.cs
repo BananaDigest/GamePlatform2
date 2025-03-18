@@ -26,7 +26,7 @@ namespace GamePlatform2
             int choice;
             do
             {
-                MenuDisplayer.ShowMessage("Введіть номер: ");
+                MenuDisplayer.ShowMessage("Введiть номер: ");
             } while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 3);
 
             string device = choice == 1 ? "Smart TV" : choice == 2 ? "Комп’ютер" : "Планшет";

@@ -50,8 +50,7 @@ namespace GamePlatform2
             else
             {
                 MenuDisplayer.ShowSuccess("Launching Strategy Game...");
-                LoadProgress(user);
-                StartSimulation();
+                base.Run(user, pc);
             }
         }
 
@@ -77,7 +76,7 @@ namespace GamePlatform2
                         break;
                     case 3:
                         running = false;
-                        MenuDisplayer.ShowMessage($"Гра завершена. Збережено {Towers} веж.");
+                        MenuDisplayer.ShowMessage($"Гра завершена.");
                         break;
                     default:
                         MenuDisplayer.ShowError("Некоректний вибiр!");
@@ -132,13 +131,8 @@ namespace GamePlatform2
                 Towers = Math.Max(0, Towers - lostTowers);
                 int lostMoney = random.Next(10, 51);
                 Money = Math.Max(0, Money - lostMoney);
-                Console.WriteLine($"Ворог напав! Втрачено {lostTowers} веж, {lostMoney} монет.");
+                MenuDisplayer.ShowError($"Ворог напав! Втрачено {lostTowers} веж, {lostMoney} монет.");
             }
-        }
-        public void EarnFunds(int amount, User user)
-        {
-            Money += amount;
-            SaveProgress(user);
         }
         public override void SaveProgress(User user)
         { 

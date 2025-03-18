@@ -7,8 +7,8 @@ namespace GamePlatform2
     {
         private int level = 1;
         private MobileStream mobileStream;
-        private Random random = new Random();
-        private string saveKey = "Adventures Game";
+        readonly Random random = new Random();
+        readonly string saveKey = "Adventures Game";
 
         public AdventuresGame() : base("Adventures Game", Platform.Windows | Platform.Mobile | Platform.MacOS | Platform.Linux , 4, 2, 2)
         {
@@ -24,9 +24,8 @@ namespace GamePlatform2
             MenuDisplayer.ShowMessage("Launching Adventures Game...");
             if (pc.Platform == Platform.Mobile)
             {
-                int stream;
                 MenuDisplayer.ShowMessage("Бажаєте транслювати гру на iнший пристрiй?\n1) Так\n2) Нi");
-                int.TryParse(Console.ReadLine(), out stream);
+                int.TryParse(Console.ReadLine(), out int stream);
                 if (stream == 1)
                 {
                     mobileStream = new MobileStream(pc, user);
@@ -37,19 +36,18 @@ namespace GamePlatform2
                 }
                 else
                 {
-                    LoadProgress(user);
-                    StartSimulation();
+                    base.Run(user, pc);
                 }
             }
             else
             {
-                LoadProgress(user);
-                StartSimulation();
+                base.Run(user, pc);
             }
         }
 
         public override void SaveProgress(User user)
         {
+            Console.WriteLine("Saving adventures");
             user.SaveProgress(saveKey, "Level", level);
         }
 

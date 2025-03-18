@@ -28,7 +28,7 @@
     <Position X="0.636" Y="11.642" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="Template method">
-    <Position X="2.4" Y="11.628" Height="0.291" Width="1.175" />
+    <Position X="2.4" Y="11.78" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="Template method">
     <Position X="4.179" Y="11.584" Height="0.291" Width="1.175" />
@@ -39,7 +39,7 @@
   <Class Name="GamePlatform2.StrategyGame">
     <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>oAAQAgAAUAAAAggEAAAAAAQAAAiAAAAAAAQAAAQAAQA=</HashCode>
+      <HashCode>oAAQAgAAUAAAAggEAAAAAAQAAAiAAAAAAAQAAAAAAQA=</HashCode>
       <FileName>Games\TemplateMethod\StrategyGame.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -103,7 +103,7 @@
   <Class Name="GamePlatform2.RPGGame">
     <Position X="2.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>wAAAAAAAYAAAAggEAAQQAAAAAACFAAAAAAQAAAQAgQA=</HashCode>
+      <HashCode>wAAAAAAAYAAAAggEAAQQAAAAAACFAAAAAAQAAAQAgQI=</HashCode>
       <FileName>Games\TemplateMethod\RPGGame.cs</FileName>
     </TypeIdentifier>
   </Class>

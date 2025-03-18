@@ -5,7 +5,7 @@ namespace GamePlatform2
 {
     public class PCManager
     {
-        private List<PC> pcs = new List<PC>
+        readonly List<PC> pcs = new List<PC>
         {
             new PC("Windows PC", Platform.Windows, 8, 16, 6, 500),
             new PC("MacOS PC", Platform.MacOS, 6, 8, 4, 256),
@@ -17,8 +17,7 @@ namespace GamePlatform2
         {
             MenuDisplayer.ShowPCList(pcs);
 
-            int choice;
-            if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= pcs.Count)
+            if (int.TryParse(Console.ReadLine(), out int choice) && choice >= 1 && choice <= pcs.Count)
             {
                 return pcs[choice - 1];
             }

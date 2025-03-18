@@ -35,16 +35,11 @@ namespace GamePlatform2
                     if (game.CanRun(pc, user))
                     {
                         game.Launch(user, pc);
-                        game.SaveProgress(user);
                     }
                     else
                     {
                         MenuDisplayer.ShowMessage("Недостатньо ресурсiв для запуску гри.");
                     }
-                }
-                else
-                {
-                    MenuDisplayer.ShowError("Фабрика для цiєї гри не знайдена.");
                 }
             }
             else

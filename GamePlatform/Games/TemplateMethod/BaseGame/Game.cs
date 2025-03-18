@@ -25,9 +25,8 @@ namespace GamePlatform2
         public abstract bool CanRun(PC pc, User user);
         public abstract void StartSimulation();
 
-        public void Run(User user, PC pc)
+        public virtual void Run(User user, PC pc)
         {
-            Install(pc);
             LoadProgress(user);
 
             if (!CanRun(pc, user))
@@ -35,8 +34,6 @@ namespace GamePlatform2
                 MenuDisplayer.ShowError("Недостатньо ресурсів для запуску гри.");
                 return;
             }
-
-            Launch(user, pc);
             StartSimulation();
             SaveProgress(user);
         }
