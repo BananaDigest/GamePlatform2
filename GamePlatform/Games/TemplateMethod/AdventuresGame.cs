@@ -47,7 +47,6 @@ namespace GamePlatform2
 
         public override void SaveProgress(User user)
         {
-            Console.WriteLine("Saving adventures");
             user.SaveProgress(saveKey, "Level", level);
         }
 

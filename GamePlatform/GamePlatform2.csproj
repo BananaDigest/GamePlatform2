@@ -51,7 +51,7 @@
     <Compile Include="Games\FactoryMetod\StrategyGameFactory.cs" />
     <Compile Include="Games\TemplateMethod\AdventuresGame.cs" />
     <Compile Include="Games\TemplateMethod\BaseGame\Game.cs" />
-    <Compile Include="Games\FactoryMetod\GameFactory.cs" />
+    <Compile Include="Games\FactoryMetod\Interface\IGameFactory.cs" />
     <Compile Include="Games\GameManagers\GameInstaller.cs" />
     <Compile Include="Games\GameManagers\GameLauncher.cs" />
     <Compile Include="Menu\GameSimulation.cs" />

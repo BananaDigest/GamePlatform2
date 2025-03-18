@@ -214,7 +214,6 @@ namespace GamePlatform2
 
         public override void SaveProgress(User user)
         {
-            Console.WriteLine("Saving RPG");
             user.SaveProgress("RPG Game", "Level", CurrentLevel);
         }
 
