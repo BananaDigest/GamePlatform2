@@ -1,26 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace GamePlatform2
 {
-    public class GameProgressNotifier
+    public class GameProgressNotifier : IObservable<GameProgressData>
     {
-        private List<IGameProgressObserver> observers = new List<IGameProgressObserver>();
+        private List<IObserver<GameProgressData>> observers = new List<IObserver<GameProgressData>>();
 
-        public void Subscribe(IGameProgressObserver observer)
+        public IDisposable Subscribe(IObserver<GameProgressData> observer)
         {
-            observers.Add(observer);
-        }
+            if (!observers.Contains(observer))
+                observers.Add(observer);
 
-        public void Unsubscribe(IGameProgressObserver observer)
-        {
-            observers.Remove(observer);
+            return new Unsubscriber(observers, observer);
         }
 
         public void Notify(string game, string stat, int value)
         {
+            var data = new GameProgressData(game, stat, value);
             foreach (var observer in observers)
             {
-                observer.OnProgressChanged(game, stat, value);
+                observer.OnNext(data);
             }
         }
     }

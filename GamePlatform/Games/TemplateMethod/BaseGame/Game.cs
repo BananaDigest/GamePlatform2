@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace GamePlatform2
 {
     public abstract class Game
@@ -39,14 +41,14 @@ namespace GamePlatform2
             SaveProgress(user);
         }
 
-        public void AttachProgressObserver(IGameProgressObserver observer)
+        public IDisposable AttachProgressObserver(IObserver<GameProgressData> observer)
         {
-            progressNotifier.Subscribe(observer);
+            return progressNotifier.Subscribe(observer);
         }
 
-        public void DetachProgressObserver(IGameProgressObserver observer)
+        public void DetachProgressObserver(IDisposable subscription)
         {
-            progressNotifier.Unsubscribe(observer);
+            subscription.Dispose();
         }
 
         public void NotifyProgress(string stat, int value)

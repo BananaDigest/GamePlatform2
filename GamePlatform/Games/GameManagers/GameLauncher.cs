@@ -30,15 +30,16 @@ namespace GamePlatform2
                 if (gameFactories.TryGetValue(gameName, out IGameFactory factory))
                 {
                     Game game = factory.CreateGame();
-                    UserProgressNotifier notifier = new UserProgressNotifier();
-                    
+                    UserProgressObserver notifier = new UserProgressObserver();
+                    IDisposable subscription = game.AttachProgressObserver(notifier);
+
                     game.LoadProgress(user);
 
                     if (game.CanRun(pc, user))
                     {
                         game.AttachProgressObserver(notifier);
                         game.Launch(user, pc);
-                        game.DetachProgressObserver(notifier);
+                        game.DetachProgressObserver(subscription);
                     }
                     else
                     {

@@ -168,25 +168,19 @@
   <Class Name="GamePlatform2.GameProgressNotifier">
     <Position X="9.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAACAABAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAACAABAAAAAAAAAAAA=</HashCode>
       <FileName>User\Observer\GameProgressNotifier.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="GamePlatform2.UserProgressNotifier">
-    <Position X="7.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>User\Observer\UserProgressNotifier.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="GamePlatform2.IGameProgressObserver">
-    <Position X="9.25" Y="2.5" Width="1.5" />
+  <Class Name="GamePlatform2.UserProgressObserver">
+    <Position X="7.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>User\Observer\Interface\IGameProgressObserver.cs</FileName>
+      <HashCode>AEAAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User\Observer\UserProgressObserver.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="GamePlatform2.IGameFactory">
     <Position X="9.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
