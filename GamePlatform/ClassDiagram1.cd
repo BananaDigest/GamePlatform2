@@ -4,10 +4,10 @@
     <Position X="7.65" Y="2.311" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="observer">
-    <Position X="9.338" Y="3.785" Height="0.291" Width="1.175" />
+    <Position X="9.396" Y="3.639" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="observer">
-    <Position X="9.367" Y="2.138" Height="0.291" Width="1.175" />
+    <Position X="9.892" Y="0.87" Height="0.291" Width="1.175" />
   </Comment>
   <Comment CommentText="Singleton">
     <Position X="5.843" Y="10.816" Height="0.291" Width="1.175" />
@@ -36,6 +36,9 @@
   <Comment CommentText="Factory method">
     <Position X="9.355" Y="9.808" Height="0.291" Width="1.175" />
   </Comment>
+  <Comment CommentText="observer">
+    <Position X="11.41" Y="5.084" Height="0.291" Width="1.175" />
+  </Comment>
   <Class Name="GamePlatform2.StrategyGame">
     <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
@@ -44,7 +47,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GamePlatform2.User">
-    <Position X="7.5" Y="4.5" Width="1.5" />
+    <Position X="7.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAgAAQBAAAIAAACAAAACBAASAAAAAAE=</HashCode>
       <FileName>User\User.cs</FileName>
@@ -86,7 +89,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GamePlatform2.Program">
-    <Position X="9.25" Y="0.75" Width="1.5" />
+    <Position X="11.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Menu\Program.cs</FileName>
@@ -178,6 +181,21 @@
     <TypeIdentifier>
       <HashCode>AEAAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>User\Observer\UserProgressObserver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GamePlatform2.GameProgressData">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgAAAAAAA=</HashCode>
+      <FileName>User\Observer\GameProgressData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GamePlatform2.Unsubscriber">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAQAAAA=</HashCode>
+      <FileName>User\Observer\Unsubscriber.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
